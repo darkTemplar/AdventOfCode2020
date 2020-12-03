@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day2"
+	"aoc/day3"
 	"fmt"
 	"os"
 )
@@ -20,8 +20,15 @@ func main() {
 	//fmt.Println("product of two sum is: ", day1.ProductOfSums(3, numbers))
 
 	// Day 2
-	policies := day2.FetchPolicyAndPassword(path, 2)
-	fmt.Println("Number of valid passwords is as per first policy is: ", day2.CountValidPasswords(policies, 1))
-	fmt.Println("Number of valid passwords is as per first policy is: ", day2.CountValidPasswords(policies, 2))
+	//policies := day2.FetchPolicyAndPassword(path, 2)
+	//fmt.Println("Number of valid passwords is as per first policy is: ", day2.CountValidPasswords(policies, 1))
+	//fmt.Println("Number of valid passwords is as per first policy is: ", day2.CountValidPasswords(policies, 2))
+
+	//Day 3
+	route := day3.ParseTreesAndSquares(path)
+	slope := []int{3, 1}
+	fmt.Println("Number of trees on slopes: ", day3.ProductOfTreesOnSlopes(route, [][]int{slope}))
+	slopes := [][]int{[]int{1, 1}, []int{3, 1}, []int{5, 1}, []int{7, 1}, []int{1, 2}}
+	fmt.Println("Number of trees on slopes: ", day3.ProductOfTreesOnSlopes(route, slopes))
 
 }
