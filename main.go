@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day3"
+	"aoc/day4"
 	"fmt"
 	"os"
 )
@@ -25,10 +25,14 @@ func main() {
 	//fmt.Println("Number of valid passwords is as per first policy is: ", day2.CountValidPasswords(policies, 2))
 
 	//Day 3
-	route := day3.ParseTreesAndSquares(path)
-	slope := []int{3, 1}
-	fmt.Println("Number of trees on slopes: ", day3.ProductOfTreesOnSlopes(route, [][]int{slope}))
-	slopes := [][]int{[]int{1, 1}, []int{3, 1}, []int{5, 1}, []int{7, 1}, []int{1, 2}}
-	fmt.Println("Number of trees on slopes: ", day3.ProductOfTreesOnSlopes(route, slopes))
+	//route := day3.ParseTreesAndSquares(path)
+	//slope := []int{3, 1}
+	//fmt.Println("Number of trees on slopes: ", day3.ProductOfTreesOnSlopes(route, [][]int{slope}))
+	//slopes := [][]int{[]int{1, 1}, []int{3, 1}, []int{5, 1}, []int{7, 1}, []int{1, 2}}
+	//fmt.Println("Number of trees on slopes: ", day3.ProductOfTreesOnSlopes(route, slopes))
+
+	//Day 4
+	passports := day4.ParsePassportData(path)
+	fmt.Println("Number of valid passports is: ", day4.CountValidPassports(passports))
 
 }
