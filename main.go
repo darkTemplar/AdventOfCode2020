@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day4"
+	"aoc/day5"
 	"fmt"
 	"os"
 )
@@ -32,7 +32,11 @@ func main() {
 	//fmt.Println("Number of trees on slopes: ", day3.ProductOfTreesOnSlopes(route, slopes))
 
 	//Day 4
-	passports := day4.ParsePassportData(path)
-	fmt.Println("Number of valid passports is: ", day4.CountValidPassports(passports))
+	//passports := day4.ParsePassportData(path)
+	//fmt.Println("Number of valid passports is: ", day4.CountValidPassports(passports))
+
+	passes := day5.ParseBoardingPasses(path)
+	fmt.Println("Maximum seatID is: ", day5.MaxSeatID(passes))
+	fmt.Println("Missing seatID is: ", day5.FindMissingSeat(passes))
 
 }
