@@ -28,8 +28,10 @@ func ParseBoardingPasses(path string) []int {
 			case rune('F'):
 				row += 0
 			case rune('B'):
+				// since row information is in first 6 chars
 				row += int(math.Exp2(float64(6 - i)))
 			case rune('R'):
+				// column information is in last 3 chars of a length 9 boarding pass code
 				column += int(math.Exp2(float64(9 - i)))
 			case rune('L'):
 				column += 0
@@ -55,7 +57,8 @@ func MaxSeatID(passes []int) int {
 func FindMissingSeat(passes []int) int {
 	sort.Ints(passes)
 	min, max := passes[0], passes[len(passes)-1]
-	// calculate
+	// calculate sum of natural numbers between min and max elems of seatIds
+	// we add the +1 to number of elems as we know one seatId is missing from passes array
 	apSum := ((min + max) * (len(passes) + 1)) / 2
 	for _, seatID := range passes {
 		apSum -= seatID
