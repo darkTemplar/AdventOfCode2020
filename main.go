@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day6"
+	"aoc/day7"
 	"fmt"
 	"os"
 )
@@ -41,8 +41,14 @@ func main() {
 	//fmt.Println("Missing seatID is: ", day5.FindMissingSeat(passes))
 
 	// Day 6
-	answerMaps := day6.ParseCustomFormInput(path)
-	fmt.Println("total answer count is: ", day6.CountAnswersFromGroups(answerMaps))
-	fmt.Println("total all yes question count is: ", day6.CountAllYesQuestions(answerMaps))
+	//answerMaps := day6.ParseCustomFormInput(path)
+	//fmt.Println("total answer count is: ", day6.CountAnswersFromGroups(answerMaps))
+	//fmt.Println("total all yes question count is: ", day6.CountAllYesQuestions(answerMaps))
+
+	// Day 7
+	baggageRules := day7.ParseBaggageRules(path)
+	reverseGraph := day7.ReverseBaggageGraph(baggageRules)
+	fmt.Println("Number of valid outer bags is: ", day7.CountOuterBags("shiny gold", reverseGraph))
+	fmt.Println("Number of inner bags: ", day7.CountBagsInside("shiny gold", baggageRules))
 
 }
