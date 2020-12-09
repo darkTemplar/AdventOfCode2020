@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day7"
+	"aoc/day9"
 	"fmt"
 	"os"
 )
@@ -46,9 +46,20 @@ func main() {
 	//fmt.Println("total all yes question count is: ", day6.CountAllYesQuestions(answerMaps))
 
 	// Day 7
-	baggageRules := day7.ParseBaggageRules(path)
-	reverseGraph := day7.ReverseBaggageGraph(baggageRules)
-	fmt.Println("Number of valid outer bags is: ", day7.CountOuterBags("shiny gold", reverseGraph))
-	fmt.Println("Number of inner bags: ", day7.CountBagsInside("shiny gold", baggageRules))
+	//baggageRules := day7.ParseBaggageRules(path)
+	//reverseGraph := day7.ReverseBaggageGraph(baggageRules)
+	//fmt.Println("Number of valid outer bags is: ", day7.CountOuterBags("shiny gold", reverseGraph))
+	//fmt.Println("Number of inner bags: ", day7.CountBagsInside("shiny gold", baggageRules))
+
+	// Day 8
+	//instructions := day8.ParseBootInstructions(path)
+	//fmt.Println("Accumulator value before loop is: ", day8.FindAccumlatorBeforeRepeat(instructions))
+
+	// Day 9
+	numbers := day9.ParseNumbers(path)
+	invalid := day9.FindFirstInValidNumber(numbers, 25)
+	index, invalidNumber := invalid[0], invalid[1]
+	fmt.Println(index, invalidNumber)
+	fmt.Println("XMAS weakness is: ", day9.FindEncryptionWeakness(numbers[:index], invalidNumber))
 
 }
