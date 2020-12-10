@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day9"
+	"aoc/day10"
 	"fmt"
 	"os"
 )
@@ -56,10 +56,15 @@ func main() {
 	//fmt.Println("Accumulator value before loop is: ", day8.FindAccumlatorBeforeRepeat(instructions))
 
 	// Day 9
-	numbers := day9.ParseNumbers(path)
-	invalid := day9.FindFirstInValidNumber(numbers, 25)
-	index, invalidNumber := invalid[0], invalid[1]
-	fmt.Println(index, invalidNumber)
-	fmt.Println("XMAS weakness is: ", day9.FindEncryptionWeakness(numbers[:index], invalidNumber))
+	//numbers := day9.ParseNumbers(path)
+	//invalid := day9.FindFirstInValidNumber(numbers, 25)
+	//index, invalidNumber := invalid[0], invalid[1]
+	//fmt.Println(index, invalidNumber)
+	//fmt.Println("XMAS weakness is: ", day9.FindEncryptionWeakness(numbers[:index], invalidNumber))
+
+	// Day 10
+	joltages := day10.ParseJoltages(path)
+	fmt.Println("Distribution of input joltages is: ", day10.FindJoltageDistribution(joltages))
+	fmt.Println("Number of distinct arrangements of joltages: ", day10.FindDistinctJoltagePaths(joltages))
 
 }
