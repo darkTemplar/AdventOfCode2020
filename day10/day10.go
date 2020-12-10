@@ -60,6 +60,5 @@ func FindDistinctJoltagePaths(joltages []int) int {
 			paths[idx] += paths[idx-j]
 		}
 	}
-	fmt.Println(paths)
 	return paths[len(joltages)-1]
 }
