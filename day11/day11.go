@@ -97,14 +97,14 @@ func CheckAdjacentSeats(seatMatrix [][]rune, row int, col int) int {
 func CheckFirstSeatInEachDirection(seatMatrix [][]rune, row int, col int) int {
 	occupied := 0
 	// We need to check 8 diff. directions
-	occupied += checkDirection(seatMatrix, row, col, -1, 0)  // North
-	occupied += checkDirection(seatMatrix, row, col, -1, 1)  // North-East
-	occupied += checkDirection(seatMatrix, row, col, 0, 1)   // East
-	occupied += checkDirection(seatMatrix, row, col, 1, 1)   // South-East
-	occupied += checkDirection(seatMatrix, row, col, 1, 0)   // South
-	occupied += checkDirection(seatMatrix, row, col, 1, -1)  // South-West
-	occupied += checkDirection(seatMatrix, row, col, 0, -1)  // West
-	occupied += checkDirection(seatMatrix, row, col, -1, -1) // North-West
+	for i := -1; i <= 1; i++ {
+		for j := -1; j <= 1; j++ {
+			if i == 0 && j == 0 {
+				continue
+			}
+			occupied += checkDirection(seatMatrix, row, col, i, j)
+		}
+	}
 	return occupied
 }
 
