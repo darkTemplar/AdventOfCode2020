@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day10"
+	"aoc/day11"
 	"fmt"
 	"os"
 )
@@ -63,8 +63,13 @@ func main() {
 	//fmt.Println("XMAS weakness is: ", day9.FindEncryptionWeakness(numbers[:index], invalidNumber))
 
 	// Day 10
-	joltages := day10.ParseJoltages(path)
-	fmt.Println("Distribution of input joltages is: ", day10.FindJoltageDistribution(joltages))
-	fmt.Println("Number of distinct arrangements of joltages: ", day10.FindDistinctJoltagePaths(joltages))
+	//joltages := day10.ParseJoltages(path)
+	//fmt.Println("Distribution of input joltages is: ", day10.FindJoltageDistribution(joltages))
+	//fmt.Println("Number of distinct arrangements of joltages: ", day10.FindDistinctJoltagePaths(joltages))
+
+	// Day 11
+	seatMatrix := day11.ParseSeats(path)
+	fmt.Println("Part 1: Number of occupied seats is: ", day11.CountOccupiedSeats(seatMatrix, 4, day11.CheckAdjacentSeats))
+	fmt.Println("Part 2: Number of occupied seats is: ", day11.CountOccupiedSeats(seatMatrix, 5, day11.CheckFirstSeatInEachDirection))
 
 }
