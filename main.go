@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day11"
+	"aoc/day12"
 	"fmt"
 	"os"
 )
@@ -68,8 +68,16 @@ func main() {
 	//fmt.Println("Number of distinct arrangements of joltages: ", day10.FindDistinctJoltagePaths(joltages))
 
 	// Day 11
-	seatMatrix := day11.ParseSeats(path)
-	fmt.Println("Part 1: Number of occupied seats is: ", day11.CountOccupiedSeats(seatMatrix, 4, day11.CheckAdjacentSeats))
-	fmt.Println("Part 2: Number of occupied seats is: ", day11.CountOccupiedSeats(seatMatrix, 5, day11.CheckFirstSeatInEachDirection))
+	//seatMatrix := day11.ParseSeats(path)
+	//fmt.Println("Part 1: Number of occupied seats is: ", day11.CountOccupiedSeats(seatMatrix, 4, day11.CheckAdjacentSeats))
+	//fmt.Println("Part 2: Number of occupied seats is: ", day11.CountOccupiedSeats(seatMatrix, 5, day11.CheckFirstSeatInEachDirection))
+
+	// Day 12
+	navigations := day12.ParseDirections(path)
+	initialPosition := day12.Point{}
+	finalPosition := day12.FollowDirections(navigations)
+	fmt.Println("Part1: Manhattan distance between start and finish is: ", day12.ManhattanDistance(initialPosition, finalPosition))
+	newFinalPosition := day12.FollowDirectionsRelativeToWayPoint(navigations, day12.Point{X: 10, Y: -1})
+	fmt.Println("Part1: Manhattan distance between start and finish is: ", day12.ManhattanDistance(initialPosition, newFinalPosition))
 
 }
