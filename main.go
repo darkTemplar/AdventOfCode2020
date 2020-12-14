@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc/day12"
+	"aoc/day13"
 	"fmt"
 	"os"
 )
@@ -73,11 +73,19 @@ func main() {
 	//fmt.Println("Part 2: Number of occupied seats is: ", day11.CountOccupiedSeats(seatMatrix, 5, day11.CheckFirstSeatInEachDirection))
 
 	// Day 12
-	navigations := day12.ParseDirections(path)
-	initialPosition := day12.Point{}
-	finalPosition := day12.FollowDirections(navigations)
-	fmt.Println("Part1: Manhattan distance between start and finish is: ", day12.ManhattanDistance(initialPosition, finalPosition))
-	newFinalPosition := day12.FollowDirectionsRelativeToWayPoint(navigations, day12.Point{X: 10, Y: -1})
-	fmt.Println("Part1: Manhattan distance between start and finish is: ", day12.ManhattanDistance(initialPosition, newFinalPosition))
+	//navigations := day12.ParseDirections(path)
+	//initialPosition := day12.Point{}
+	// finalPosition := day12.FollowDirections(navigations)
+	// fmt.Println("Part1: Manhattan distance between start and finish is: ", day12.ManhattanDistance(initialPosition, finalPosition))
+	// newFinalPosition := day12.FollowDirectionsRelativeToWayPoint(navigations, day12.Point{X: 10, Y: -1})
+	// fmt.Println("Part1: Manhattan distance between start and finish is: ", day12.ManhattanDistance(initialPosition, newFinalPosition))
 
+	// Day 13
+	start, busTimes := day13.ParseBusTimes(path)
+	//fmt.Println(start, busTimes)
+	fmt.Println("Product of earliest departing busID and waiting time is: ", day13.ProductOfEarliestDepartingBusAndWaitingTime(start, busTimes))
+	fmt.Println("Ideal starting time so that all buses can leave with time interval equal to the offset in bus times array: ", day13.FindIdealStart(busTimes))
+	//fmt.Println(day13.FindIdealStart([]int{13, 0, 0, 59, 0, 31, 19}))
+
+	//fmt.Println(day13.Egcd(11, 8))
 }
