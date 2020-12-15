@@ -1,7 +1,8 @@
 package main
 
 import (
-	"aoc/day13"
+	"aoc/day14"
+	"aoc/day15"
 	"fmt"
 	"os"
 )
@@ -81,11 +82,21 @@ func main() {
 	// fmt.Println("Part1: Manhattan distance between start and finish is: ", day12.ManhattanDistance(initialPosition, newFinalPosition))
 
 	// Day 13
-	start, busTimes := day13.ParseBusTimes(path)
+	// start, busTimes := day13.ParseBusTimes(path)
 	//fmt.Println(start, busTimes)
-	fmt.Println("Product of earliest departing busID and waiting time is: ", day13.ProductOfEarliestDepartingBusAndWaitingTime(start, busTimes))
-	fmt.Println("Ideal starting time so that all buses can leave with time interval equal to the offset in bus times array: ", day13.FindIdealStart(busTimes))
-	//fmt.Println(day13.FindIdealStart([]int{13, 0, 0, 59, 0, 31, 19}))
+	// fmt.Println("Product of earliest departing busID and waiting time is: ", day13.ProductOfEarliestDepartingBusAndWaitingTime(start, busTimes))
+	// fmt.Println("Ideal starting time so that all buses can leave with time interval equal to the offset in bus times array: ", day13.FindIdealStart(busTimes))
 
-	//fmt.Println(day13.Egcd(11, 8))
+	// Day 14
+	instructions := day14.ParseInstructions(path)
+	instructionsV1 := day14.ParseBitInstructionsV1(instructions)
+	fmt.Println("Part1: Sum of updated memory is: ", day14.SumOfMemory(instructionsV1, day14.ApplyInstructionsV1))
+	instructionsV2 := day14.ParseBitInstructionsV2(instructions)
+	fmt.Println("Part2: Sum of updated memory is: ", day14.SumOfMemory(instructionsV2, day14.ApplyInstructionsV2))
+
+	// Day 15
+	numbers := []int{1, 20, 11, 6, 12, 0}
+	fmt.Printf("Part 1: spoken number after %d turn is: %d\n", 2020, day15.FindSpokenNumber(numbers, 2020))
+	fmt.Printf("Part 1: spoken number after %d turn is: %d\n", 30000000, day15.FindSpokenNumber(numbers, 30000000))
+
 }
