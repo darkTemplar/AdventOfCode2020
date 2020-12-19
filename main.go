@@ -1,8 +1,7 @@
 package main
 
 import (
-	"aoc/day14"
-	"aoc/day15"
+	"aoc/day16"
 	"fmt"
 	"os"
 )
@@ -88,15 +87,22 @@ func main() {
 	// fmt.Println("Ideal starting time so that all buses can leave with time interval equal to the offset in bus times array: ", day13.FindIdealStart(busTimes))
 
 	// Day 14
-	instructions := day14.ParseInstructions(path)
-	instructionsV1 := day14.ParseBitInstructionsV1(instructions)
-	fmt.Println("Part1: Sum of updated memory is: ", day14.SumOfMemory(instructionsV1, day14.ApplyInstructionsV1))
-	instructionsV2 := day14.ParseBitInstructionsV2(instructions)
-	fmt.Println("Part2: Sum of updated memory is: ", day14.SumOfMemory(instructionsV2, day14.ApplyInstructionsV2))
+	// instructions := day14.ParseInstructions(path)
+	// instructionsV1 := day14.ParseBitInstructionsV1(instructions)
+	// fmt.Println("Part1: Sum of updated memory is: ", day14.SumOfMemory(instructionsV1, day14.ApplyInstructionsV1))
+	// instructionsV2 := day14.ParseBitInstructionsV2(instructions)
+	// fmt.Println("Part2: Sum of updated memory is: ", day14.SumOfMemory(instructionsV2, day14.ApplyInstructionsV2))
 
 	// Day 15
-	numbers := []int{1, 20, 11, 6, 12, 0}
-	fmt.Printf("Part 1: spoken number after %d turn is: %d\n", 2020, day15.FindSpokenNumber(numbers, 2020))
-	fmt.Printf("Part 1: spoken number after %d turn is: %d\n", 30000000, day15.FindSpokenNumber(numbers, 30000000))
+	//numbers := []int{1, 20, 11, 6, 12, 0}
+	//fmt.Printf("Part 1: spoken number after %d turn is: %d\n", 2020, day15.FindSpokenNumber(numbers, 2020))
+	//fmt.Printf("Part 1: spoken number after %d turn is: %d\n", 30000000, day15.FindSpokenNumber(numbers, 30000000))
+
+	// Day 16
+	fieldNames, intervals, yourTickets, nearbyTickets := day16.ParseTickets(path)
+	fieldMap := day16.CombineFieldsAndIntervals(fieldNames, intervals)
+	errorRate, validTickets := day16.FindTicketScanningErrorRate(intervals, nearbyTickets)
+	fmt.Println("Part 1: Error rate is: ", errorRate)
+	fmt.Println("Part 2: Product of departure fields is: ", day16.FindDepartureFieldsProduct(fieldMap, yourTickets, validTickets))
 
 }
